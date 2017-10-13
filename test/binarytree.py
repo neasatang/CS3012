@@ -1,17 +1,26 @@
+from Python.CS3012.node import BTNode
 
-#Binary Tree Node class
-class BTNode:
+def insert(root, node):
+    if root is None:
+        root = node
 
-    #Constructor for a node
-     def __init__(self, key):
-         self.key = key
-         self.right = None
-         self.left = None
+    else:
+        if root.key < node.key:
+            if root.right is None:
+                root.right = node
 
+            else:
+                insert(root.right, node)
 
+        else:
+            if root.left is None:
+                root.left = node
+
+            else:
+                insert(root.left ,node)
 
 def traverse(root, path, k):
-
+    #hi
     #base case
     if root is None:
         return False
@@ -27,16 +36,14 @@ def traverse(root, path, k):
     path.pop()
     return False
 
-def findLCA (root, n1, n2):
+def findLCA (root, node1, node2):
 
     path1 = []
     path2 = []
 
-
-    if (not traverse(root, path1, n1) or not traverse(root, path2, n2)):
+    if (not traverse(root, path1, node1) or not traverse(root, path2, node2)):
         return -1
 
-        # Compare the paths to get the first different value
     i = 0
     while (i < len(path1) and i < len(path2)):
         if path1[i] != path2[i]:
@@ -44,17 +51,20 @@ def findLCA (root, n1, n2):
         i += 1
     return path1[i - 1]
 
-# Driver program to test above function
-# Let's create the Binary Tree shown in above diagram
-root =  BTNode(1)
-root.left = BTNode(2)
-root.right = BTNode(3)
-root.left.left = BTNode(4)
-root.left.right = BTNode(5)
-root.right.left = BTNode(6)
-root.right.right = BTNode(7)
+def printBST(root):
+    if root:
+        printBST(root.left)
+        print(root.key)
+        printBST(root.right)
 
-print("LCA(4, 5) = %d" % (findLCA(root, 4, 5, )))
-print("LCA(4, 6) = %d" % (findLCA(root, 4, 6)))
-print("LCA(3, 4) = %d" % (findLCA(root, 3, 4)))
-print("LCA(2, 4) = %d" % (findLCA(root, 2, 4)))
+root = BTNode(50)
+insert(root, BTNode(30))
+insert(root, BTNode(20))
+insert(root, BTNode(40))
+insert(root, BTNode(70))
+insert(root, BTNode(60))
+insert(root, BTNode(80))
+
+printBST(root)
+
+print("LCA(LCA (20,40) = %d" % (findLCA(root,20,40)))
