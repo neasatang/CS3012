@@ -6,4 +6,3 @@ class BTNode:
          self.key = key
          self.right = None
          self.left = None
-
