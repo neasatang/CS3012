@@ -20,7 +20,7 @@ def insert(root, node):
                 insert(root.left ,node)
 
 def traverse(root, path, k):
-    #hi
+
     #base case
     if root is None:
         return False
