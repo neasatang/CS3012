@@ -50,7 +50,17 @@ class Tree(object):
 
     # This method returns `None` if no common is found
     def find_common(self, a, b):
-        return self._find_common(self.root, a, b)
+        if self.root == None:
+            return None
+
+        #tests for if two of the same node
+        if self.node_exists(a):
+            if a == b:
+                return a
+
+        else:
+          return self._find_common(self.root, a, b)
+
 
     def _find_common(self, node, a, b):
         # Traverse right until a diverge occurs
