@@ -130,11 +130,18 @@ class MyTestCase(unittest.TestCase):
     #test for one node in tree
     def test_LCA_4(self):
         tree = binarytree.Tree()
+        tree.put(3)
         tree.put(2)
-        self.assertFalse(tree.find_common(2,5))
+        self.assertFalse(tree.find_common(2, 5))
+
+    #test for one node in tree
+    def test_LCA5(self):
+        tree = binarytree.Tree()
+        tree.put(2)
+        self.assertFalse(tree.find_common(3, 4))
 
     #test for two nodes in a tree
-    def test_LCA_5(self):
+    def test_LCA_6(self):
         tree = binarytree.Tree()
         tree.put(2)
         tree.put(4)
