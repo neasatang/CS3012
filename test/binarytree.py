@@ -58,6 +58,12 @@ class Tree(object):
             if a == b:
                 return a
 
+        if a == self.root or b == self.root:
+            return self.root
+
+        if not self.node_exists(a) or not self.node_exists(b):
+            return None
+
         else:
           return self._find_common(self.root, a, b)
 
@@ -69,7 +75,7 @@ class Tree(object):
 
             # if right node is `a` or `b` then we found common
             if node.right == a or node.right == b:
-                return node.val
+                return node.right.val
 
             return self._find_common(node.right, a, b)
 
@@ -79,7 +85,7 @@ class Tree(object):
 
             # if left node is `a` or `b` then we found common
             if node.left == a or node.left == b:
-                return node.val
+                return node.left.val
 
             return self._find_common(node.left, a, b)
 
@@ -103,6 +109,7 @@ class Tree(object):
             else:
                 return None
 
+    #checks if node exists in the tree
     def node_exists(self, val):
         return self._node_exists(self.root, val)
 
