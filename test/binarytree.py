@@ -1,70 +1,137 @@
-from Python.CS3012.node import BTNode
+class Node(object):
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
 
-def insert(root, node):
-    if root is None:
-        root = node
+    def __lt__(self, val):
+        return self.val < val
 
-    else:
-        if root.key < node.key:
-            if root.right is None:
-                root.right = node
+    def __gt__(self, val):
+        return self.val > val
 
-            else:
-                insert(root.right, node)
+    def __eq__(self, val):
+        return self.val == val
+
+    def __str__(self):
+        return "[Node val: %d]" % self.val
+
+
+class Tree(object):
+    def __init__(self):
+        self.root = None
+
+    def put(self, val):
+        self.root = self._put(self.root, val)
+
+    def _put(self, node, val):
+        if node is None:
+            node = Node(val)
+
+        if val < node:
+            node.left = self._put(node.left, val)
+        elif val > node:
+            node.right = self._put(node.right, val)
+        else:
+            node.val = val
+
+        return node
+
+    def get(self, val):
+        return self._get(self.root, val)
+
+    def _get(self, node, val):
+        while not node is None:
+            if val < node: node = node.left
+            elif val > node: node = node.right
+            else: return node.val
+
+        return None
+
+    # This method returns `None` if no common is found
+    def find_common(self, a, b):
+        if self.root == None:
+            return None
+
+        #tests for if two of the same node
+        if self.node_exists(a):
+            if a == b:
+                return a
+
+        if a == self.root or b == self.root:
+            return self.root
+
+        if not self.node_exists(a) or not self.node_exists(b):
+            return None
 
         else:
-            if root.left is None:
-                root.left = node
+          return self._find_common(self.root, a, b)
 
+
+    def _find_common(self, node, a, b):
+        # Traverse right until a diverge occurs
+        if a > node and b > node:
+            if node.right is None: return None
+
+            # if right node is `a` or `b` then we found common
+            if node.right == a or node.right == b:
+                return node.right.val
+
+            return self._find_common(node.right, a, b)
+
+        # Traverse left until a diverge occurs
+        elif a < node and b < node:
+            if node.left is None: return None
+
+            # if left node is `a` or `b` then we found common
+            if node.left == a or node.left == b:
+                return node.left.val
+
+            return self._find_common(node.left, a, b)
+
+        # root does not have any common ancestor
+        # This test is later because we dont want the
+        # recursion to hit it every time
+        elif a == self.root or b == self.root:
+            return None
+
+        else:
+            # A diverge of the tree traversal occurs here
+            # So the current node is a potential common ancestor
+            # Verify that a and b are legitimate nodes
+            if self._node_exists(node, a):
+                # `a` exists ensure `b` exists
+                if self._node_exists(node, b):
+                    # Common ancestor is validated
+                    return node.val
+                else:
+                    return None
             else:
-                insert(root.left ,node)
+                return None
 
-def traverse(root, path, k):
+    #checks if node exists in the tree
+    def node_exists(self, val):
+        return self._node_exists(self.root, val)
 
-    #base case
-    if root is None:
-        return False
+    def _node_exists(self, node, val):
+        return not self._get(node, val) is None
 
-    path.append(root.key)
-
-    if root.key == k:
-        return True
-
-    if ((root.left != None and traverse(root.left, path, k)) or (root.right != None and traverse(root.right, path, k))):
-        return True
-
-    path.pop()
-    return False
-
-def findLCA (root, node1, node2):
-
-    path1 = []
-    path2 = []
-
-    if (not traverse(root, path1, node1) or not traverse(root, path2, node2)):
-        return -1
-
-    i = 0
-    while (i < len(path1) and i < len(path2)):
-        if path1[i] != path2[i]:
-            break
-        i += 1
-    return path1[i - 1]
-
-def printBST(root):
-    if root:
-        printBST(root.left)
-        print(root.key)
-        printBST(root.right)
-
-root = BTNode(50)
-insert(root, BTNode(30))
-insert(root, BTNode(20))
-insert(root, BTNode(40))
-insert(root, BTNode(70))
-insert(root, BTNode(60))
-insert(root, BTNode(80))
-
-printBST(root)
-
-print("LCA(LCA (20,40) = %d" % (findLCA(root,20,40)))
+if __name__ == "__main__":
+    from sys import stdout
+    vals = [30, 8, 52, 3, 20, 10, 29, 62]
+    tree = Tree()
+    [tree.put(val) for val in vals]
+    pairs = [
+        (3, 20),
+        (3, 29),
+        (10, 29),
+        (20, 52),
+        (3, 62),
+        (4, 29),
+        (3, 1),
+        (8, 3),
+        (8, 20)
+    ]
+    for (a, b) in pairs:
+        stdout.write("Common for %d & %d: " % (a, b))
+        print(tree.find_common(a, b))
