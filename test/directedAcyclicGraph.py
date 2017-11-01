@@ -2,12 +2,12 @@ import sys
 class DAG(object):
 
     # prints graph
-    def print_graph(self, graph):
-        print(graph)
+    #def print_graph(self, graph):
+    #    print(graph)
 
     # prints the nodes from a list from graph
-    def print_node_list(self,list):
-        print(list)
+    #def print_node_list(self,list):
+    #    print(list)
 
     # create empty set for nodes for the DAG
     def __init__(self):
@@ -85,9 +85,10 @@ class DAG(object):
                         if node1 == node2 and count < lowest_count: # LCA is the one with the lowest count
                             LCANode = node2
                             lowest_count = count
-                            break
+                            return LCANode
+
                         count += 1
-        #print(LCANode) #testing purposes
+
 
     # calculates the DFS for an LCA node
     def LCA_DFS(self, node_list, graph, node, index, end_node):
@@ -113,4 +114,3 @@ class DAG(object):
                 else:
                     return False
             return True
-
