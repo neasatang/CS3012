@@ -17,13 +17,13 @@ File is called "github_api.py" where I used the PyGitHub library in Python.
 
 ## Sixth Assignment - Data Visualisation:
 To do list:
-- Get rid of the unncessary parts from the JSON
-- Set up a database
-- Store each year in its own column in a database
-- Store the users into the corresponding years
-- Create another column called "PlaceName"
-- Store where the users live into that column, ignoring the cities and just storing the countries
+~~- Get rid of the unncessary parts from the JSON~~
+~~- Set up a database~~
+~~- Store each year in its own column in a database (can't do in terms of year since i misread the api lol~~
+~~- Store the users into the corresponding years (same with this~~
+~~- Create another column called "PlaceName"~~
+- Extend the user data to maybe 20,000 (not sure why it's 30 rn)
+- Insert user and place data into MYSQL db.
 - Figure out how plotly works (https://plot.ly/python/choropleth-maps/#world-choropleth-map)
-- Implement a map for one year
-- Implement a scroll-bar between 4 years
-- Allow the map to update the data when scroll bar is used
+- Hover over country, display stats.
+- Top 5, Top 10, Top 20 countries scroll bar option.
