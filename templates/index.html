@@ -1,1 +1,99 @@
-<h1>Hello world!</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Graph of the Top 100 GitHub Repositories in Star order</title>
+
+        <style>
+        body {
+            background-color: linen;
+        }
+
+        h1 {
+            color: maroon;
+            margin-left: 40px;
+        }
+
+        #container{
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            margin-right:10px;
+        }
+        </style>
+        
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+        
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
+        <style>
+          html {
+            width: 100%;
+            height: 100%;
+          }
+          body {
+            width: 90%;
+            height: 100%;
+            margin: auto;
+          }
+        </style>
+    </head>
+    <body>
+        
+        <div class="bk-root">
+            <div class="bk-plotdiv" id="2b18062a-7de3-4a22-8b77-f0c0e6d0164c"></div>
+        </div>
+        
+        <script type="application/json" id="c713c608-981f-46df-8aa0-f1bef9c85e19">
+          {"b253845e-1ce1-4738-a025-41e36a0b4049":{"roots":{"references":[{"attributes":{"overlay":{"id":"78859a10-56ab-40ee-9824-0cd0c9a3f8b6","type":"BoxAnnotation"}},"id":"41ca7715-f05c-4229-80e3-002310878d15","type":"BoxZoomTool"},{"attributes":{},"id":"145ea514-d0a5-4a7e-980f-2318231ca8f9","type":"PanTool"},{"attributes":{},"id":"a165d56b-9afd-4199-8d79-d65b0e0950bc","type":"BasicTicker"},{"attributes":{"dimension":1,"plot":{"id":"c6dcc78f-703f-44d6-8037-91378d43a4d4","subtype":"Figure","type":"Plot"},"ticker":{"id":"e3586e13-8c97-4c0d-97fa-9b131e230e0b","type":"BasicTicker"}},"id":"8492e7ae-0c04-473b-87d5-06b63e01d50c","type":"Grid"},{"attributes":{"below":[{"id":"b59d82bd-e007-476d-a330-d6dfdc9974fd","type":"LinearAxis"}],"left":[{"id":"4b0533de-5389-46ec-8e53-af49c0e4188d","type":"LinearAxis"}],"renderers":[{"id":"b59d82bd-e007-476d-a330-d6dfdc9974fd","type":"LinearAxis"},{"id":"c069fb7a-6ffb-403c-bb89-10c36235cd06","type":"Grid"},{"id":"4b0533de-5389-46ec-8e53-af49c0e4188d","type":"LinearAxis"},{"id":"8492e7ae-0c04-473b-87d5-06b63e01d50c","type":"Grid"},{"id":"78859a10-56ab-40ee-9824-0cd0c9a3f8b6","type":"BoxAnnotation"},{"id":"1d8629dd-d699-49eb-ac5f-a763cd581509","type":"GlyphRenderer"}],"title":{"id":"c72de655-2982-42db-aa37-71a57edfa615","type":"Title"},"toolbar":{"id":"56e5158a-1cae-43a2-b1dc-9344994a0f16","type":"Toolbar"},"x_range":{"id":"3b655125-f50e-465e-a8a3-2e2829a61e35","type":"DataRange1d"},"x_scale":{"id":"ea58a7dd-666a-487d-9333-3f2f2fa47467","type":"LinearScale"},"y_range":{"id":"0f5e213e-ad82-4070-902c-f62ddc7f349a","type":"DataRange1d"},"y_scale":{"id":"351264b3-b62f-4617-9d00-758937fb4c50","type":"LinearScale"}},"id":"c6dcc78f-703f-44d6-8037-91378d43a4d4","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null},"id":"3b655125-f50e-465e-a8a3-2e2829a61e35","type":"DataRange1d"},{"attributes":{"data_source":{"id":"b5be8398-2532-4b37-85e7-49ab910a557e","type":"ColumnDataSource"},"glyph":{"id":"1efb7fd8-d636-48d5-b67b-fb0a4c1513d7","type":"Circle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1dca3197-cf6e-416c-b1e0-9dbf8db4c25d","type":"Circle"},"selection_glyph":null,"view":{"id":"e8124e50-f057-49cf-a6b6-9e99f3c7ed64","type":"CDSView"}},"id":"1d8629dd-d699-49eb-ac5f-a763cd581509","type":"GlyphRenderer"},{"attributes":{},"id":"351264b3-b62f-4617-9d00-758937fb4c50","type":"LinearScale"},{"attributes":{"plot":{"id":"c6dcc78f-703f-44d6-8037-91378d43a4d4","subtype":"Figure","type":"Plot"},"ticker":{"id":"a165d56b-9afd-4199-8d79-d65b0e0950bc","type":"BasicTicker"}},"id":"c069fb7a-6ffb-403c-bb89-10c36235cd06","type":"Grid"},{"attributes":{"axis_label":"Number of Stars","formatter":{"id":"a8980bb3-1ae1-428d-b833-1ae487df5f72","type":"BasicTickFormatter"},"plot":{"id":"c6dcc78f-703f-44d6-8037-91378d43a4d4","subtype":"Figure","type":"Plot"},"ticker":{"id":"e3586e13-8c97-4c0d-97fa-9b131e230e0b","type":"BasicTicker"}},"id":"4b0533de-5389-46ec-8e53-af49c0e4188d","type":"LinearAxis"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"id":"145ea514-d0a5-4a7e-980f-2318231ca8f9","type":"PanTool"},{"id":"9b3f0d8d-79eb-43ff-b29c-f5bf9d149120","type":"WheelZoomTool"},{"id":"41ca7715-f05c-4229-80e3-002310878d15","type":"BoxZoomTool"},{"id":"e6533179-cee3-4134-97f6-1d28fef10304","type":"SaveTool"},{"id":"cff662e2-bfab-427f-828f-e69c926316f8","type":"ResetTool"},{"id":"94ef17bb-e833-47cd-a2de-d2c609a4db89","type":"HelpTool"}]},"id":"56e5158a-1cae-43a2-b1dc-9344994a0f16","type":"Toolbar"},{"attributes":{"callback":null},"id":"0f5e213e-ad82-4070-902c-f62ddc7f349a","type":"DataRange1d"},{"attributes":{},"id":"cff662e2-bfab-427f-828f-e69c926316f8","type":"ResetTool"},{"attributes":{},"id":"e6533179-cee3-4134-97f6-1d28fef10304","type":"SaveTool"},{"attributes":{"callback":null,"column_names":["x","y","fill_color"],"data":{"fill_color":["firebrick","pink","blue","green","navy","lilac","violet","cyan","yellow","darkolivegreen","paleblue","lightslategray","lightskyblue","mistyrose","darkturquoise","deeppink","fuchsia","forestgreen","lavender","khaki","lightsalmon","deepskyblue","paleturquoise","olive","coral","blueviolet"],"x":[1110,1953,270,1745,13649,946,125,39,55,100,251,288,336,3300,4095,32,603,72826,14,99,4217,4407,119,3229,16449,14366,63,655,2350,224,158,5125,63,4318,334,330,1,172,4017,2166,326,257,0,49,284,102,57,3,897,253,117,1086,1738,436,1593,42,2900,5,167,878,7,1004,1562,3,17827,299,647,34,715,14,5038,0,100,436,314,235,21,50,77,408,17,111,3726,6828,30,616,2014,412,952,107,518,2821,6,177,44,45,113,2681,11103,1229],"y":[291536,119181,98407,83436,81890,76721,73578,72075,70859,63243,63055,58775,57699,57208,54003,53835,53279,53009,47570,47409,46816,43468,42440,42310,41940,40320,39298,39292,38855,38556,38043,37969,37845,37527,36870,36468,36121,35576,35446,34913,34686,33990,33532,33028,32930,32863,32806,32751,32637,32569,32292,32251,31991,31676,31299,31207,31054,30547,30474,30470,30383,30365,30329,30316,30047,29441,29202,29194,29154,29050,28881,28759,28748,28472,28305,28287,28176,27988,27708,27553,27431,27407,27347,27197,26892,26857,26781,26635,26239,26211,26031,26018,25725,25624,25445,25415,25399,25289,25286,25206]}},"id":"b5be8398-2532-4b37-85e7-49ab910a557e","type":"ColumnDataSource"},{"attributes":{},"id":"e3586e13-8c97-4c0d-97fa-9b131e230e0b","type":"BasicTicker"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"78859a10-56ab-40ee-9824-0cd0c9a3f8b6","type":"BoxAnnotation"},{"attributes":{},"id":"a8980bb3-1ae1-428d-b833-1ae487df5f72","type":"BasicTickFormatter"},{"attributes":{},"id":"ea58a7dd-666a-487d-9333-3f2f2fa47467","type":"LinearScale"},{"attributes":{"axis_label":"Number of Commits","formatter":{"id":"47b35531-3f92-41ef-88f5-91c64da2f9b9","type":"BasicTickFormatter"},"plot":{"id":"c6dcc78f-703f-44d6-8037-91378d43a4d4","subtype":"Figure","type":"Plot"},"ticker":{"id":"a165d56b-9afd-4199-8d79-d65b0e0950bc","type":"BasicTicker"}},"id":"b59d82bd-e007-476d-a330-d6dfdc9974fd","type":"LinearAxis"},{"attributes":{"fill_alpha":{"value":0.6},"fill_color":{"field":"fill_color"},"line_alpha":{"value":0.6},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":20},"x":{"field":"x"},"y":{"field":"y"}},"id":"1efb7fd8-d636-48d5-b67b-fb0a4c1513d7","type":"Circle"},{"attributes":{},"id":"47b35531-3f92-41ef-88f5-91c64da2f9b9","type":"BasicTickFormatter"},{"attributes":{},"id":"9b3f0d8d-79eb-43ff-b29c-f5bf9d149120","type":"WheelZoomTool"},{"attributes":{},"id":"94ef17bb-e833-47cd-a2de-d2c609a4db89","type":"HelpTool"},{"attributes":{"source":{"id":"b5be8398-2532-4b37-85e7-49ab910a557e","type":"ColumnDataSource"}},"id":"e8124e50-f057-49cf-a6b6-9e99f3c7ed64","type":"CDSView"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":20},"x":{"field":"x"},"y":{"field":"y"}},"id":"1dca3197-cf6e-416c-b1e0-9dbf8db4c25d","type":"Circle"},{"attributes":{"plot":null,"text":"Graph of the Top 100 GitHub Repositories in Star order"},"id":"c72de655-2982-42db-aa37-71a57edfa615","type":"Title"}],"root_ids":["c6dcc78f-703f-44d6-8037-91378d43a4d4"]},"title":"Bokeh Application","version":"0.12.13"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('c713c608-981f-46df-8aa0-f1bef9c85e19').textContent;
+                  var render_items = [{"docid":"b253845e-1ce1-4738-a025-41e36a0b4049","elementid":"2b18062a-7de3-4a22-8b77-f0c0e6d0164c","modelid":"c6dcc78f-703f-44d6-8037-91378d43a4d4"}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing")
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+
+     <div id="container">
+         <p>Top 10 Starred Repositories on GitHub: </p>
+         <ul>
+            {% for n in url_data %}
+             <li><a href={{n.1}}>{{n.0}}</a></li>
+             {% endfor %}
+         </ul>
+        </div>
+
+    </body>
+</html>
