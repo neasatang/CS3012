@@ -16,14 +16,16 @@ The essay is called "Software Engineering Essay.pdf"
 File is called "github_api.py" where I used the PyGitHub library in Python.
 
 ## Sixth Assignment - Data Visualisation:
-To do list:
-~~- Get rid of the unncessary parts from the JSON~~
-~~- Set up a database~~
-~~- Store each year in its own column in a database (can't do in terms of year since i misread the api lol~~
-~~- Store the users into the corresponding years (same with this~~
-~~- Create another column called "PlaceName"~~
-- Extend the user data to maybe 20,000 (not sure why it's 30 rn)
-- Insert user and place data into MYSQL db.
-- Figure out how plotly works (https://plot.ly/python/choropleth-maps/#world-choropleth-map)
-- Hover over country, display stats.
-- Top 5, Top 10, Top 20 countries scroll bar option.
+Gets the Top 100 Repositories in GitHub in order of most starred and plots them onto a plot graph. It compares its stars with the number of commits the repo has had in the present year. 
+
+As well as that on the side of the HTML, it includes hyperlinks to the repos of the Top 10 Repositories in order of the most starred.
+
+
+<img src= https://github.com/neasatang/CS3012/blob/master/Screen%20Shot%202017-12-14%20at%2019.17.23.png | width = 400>
+
+On the graph, by clicking on the magnifying glass and selecting over an area, it zooms into the graph so that you can have a closer look at the plots like so:
+
+
+<img src= https://github.com/neasatang/CS3012/blob/master/Screen%20Shot%202017-12-14%20at%2019.21.32.png | width = 400>
+
+I used Flask as the framework to serve. I used the library matplotlib in order to plot the data onto a graph. Overall, I did the assignment primarily in Python.
