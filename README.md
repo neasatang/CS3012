@@ -9,6 +9,14 @@ I created two new files called "directedAcyclicGraph.py" and "testDAG.py"
 ## Third Assignment - Software Engineer Essay:
 The essay is called "SoftwareEngineerEssay.pdf". Ignore the most recent commit on this file. I accidentally overwrote the original commit for this file with another commit for another file, so if you're wonder why it seems like I worked on it past the deadline, if you could check the commit log for that file, you can see that I did have it uploaded on time, I just messed up my git commit command at some point at a later stage.
 
+I completely forgot to add my references, hope it's still ok to add references here:
+https://www.forbes.com/profile/drew-houston/
+http://www.eyerys.com/articles/people/hosting-files-clouds-drew-houston
+http://www.harbus.org/2017/interview-drew-houston-founder-ceo-dropbox/
+https://successstory.com/people/drew-houston
+https://blog.ycombinator.com/drew-houston-on-how-to-build-the-future/
+http://uk.businessinsider.com/dropbox-founder-and-ceo-drew-houston-interview-2017-6?r=US&IR=T
+
 ## Fourth Assignment - Measuring Software Engineering Essay:
 The essay is called "Software Engineering Essay.pdf"
 
